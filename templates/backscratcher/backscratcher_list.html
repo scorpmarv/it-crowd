@@ -1,0 +1,8 @@
+<h1>Backscratchers</h1>
+<ul>
+{% for backscratcher in object_list %}
+    <li><a href="{% url 'backscratchers-detail' backscratcher.id %}">{{ backscratcher.item_name }} - {{ backscratcher.item_description }} - {{ backscratcher.item_size }} - ${{ backscratcher.item_price }}</a></li>
+{% empty %}
+    <li>No backscratcher yet.</li>
+{% endfor %}
+</ul>
